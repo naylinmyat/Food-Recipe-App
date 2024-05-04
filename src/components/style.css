@@ -7,7 +7,85 @@
 body{
     background: white;
     width: 100%;
-    padding: 20px 0;
+    padding-top: 90px;
+}
+
+.navBar{
+    width: 100%;
+    display: flex;
+    background: black;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.logo{
+    color: var(--theme_color);
+    padding: 18px 0;
+    margin-left: 4%;
+}
+
+.navRightSide{
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.navHome{
+    margin-right: 30px;
+}
+
+.navHome:hover{
+    color: var(--theme_color);
+}
+
+.orangeColor,
+.skyblueColor,
+.violetColor,
+.hotPinkColor{
+    margin-right: 10px;
+}
+
+.navColorsContainer{
+    display: flex;
+}
+
+.orangeColor,
+.skyblueColor,
+.violetColor,
+.lightGreenColor,
+.hotPinkColor{
+    width: 30px;
+    height: 30px;
+}
+
+.orangeColor:hover,
+.skyblueColor:hover,
+.violetColor:hover,
+.lightGreenColor:hover,
+.hotPinkColor:hover{
+    border: 1px solid white;
+}
+
+.orangeColor{
+    background: orange;
+}
+.skyblueColor{
+    background: skyblue;
+}
+.violetColor{
+    background: violet;
+}
+.lightGreenColor{
+    background: lightgreen;
+}
+.hotPinkColor{
+    background: hotpink;
 }
 
 .loading{
@@ -23,6 +101,7 @@ body{
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    font-size: 16px;
 }
 
 .IngredientInfoPage{
@@ -32,7 +111,7 @@ body{
 .heading h1{
     letter-spacing: 1px;
     margin-bottom: 15px;
-    color: orange;
+    color: var(--theme_color);
 }
 
 .heading h4{
@@ -76,12 +155,12 @@ body{
 .countryContainer .country:hover,
 .numBox:hover,
 .seeAllIngredientsBtn:hover{
-    color: orange;
+    color: var(--theme_color);
 }
 
 .categoryContainer .currentCategory,
 .countryContainer .currentCountry{
-    background: orange;
+    background: var(--theme_color);
     color: white;
 }
 
@@ -131,7 +210,7 @@ img{
 
 .foodName,
 .ingredientName{
- color: orange;
+ color: var(--theme_color);
  font-size: 18px;
  margin-top: 4px;
 }
@@ -168,21 +247,27 @@ img{
 }
 
 .currentNumBox{
-    background: orange;
+    background: var(--theme_color);
 }
 
 .alpha{
     font-size: 16px;
 }
 
-.errorMessage{
+.errorMessage,
+.ingredientSearchErrorMessage{
     color: red;
     margin-bottom: 15px;
+}
+.ingredientSearchErrorMessage{
+    margin-bottom: 35%;
 }
 
 .content{
     width: 80%;
     margin: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .content img{
@@ -196,7 +281,7 @@ img{
     left: 50%;
     transform: translate(-50%,-50%);
     background: white;
-    color: orange;
+    color: var(--theme_color);
     font-size: 24px;
     padding: 32px;
     text-align: center;
@@ -254,11 +339,50 @@ iframe{
 }
 
 .sorryMessage{
-    color: orange;
+    color: var(--theme_color);
+    /* background: deepskyblue; */
+}
+
+.footer{
+    background: black;
+    color: white;
+    padding: 25px 10%;
+    text-align: justify;
 }
 
 @media (max-width: 600px){
     .searchBar{
         width: 80%;
+    }
+    .navBar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 8px;
+    }
+    .logo{
+        padding: 8px 0;
+    }
+    .navRightSide{
+        margin-left: 5%;
+    }
+    .main,
+    .IngredientInfoPage{
+        width: 95%;
+    }
+    .ingredientImgAndDesContainer{
+        flex-direction: column;
+    }
+    .ingredientImgAndNameContainer{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    
+    .ingredientImg{
+        width: 100%;
+    }
+    
+    .description{
+        width: 100%;
+        text-align: justify;
     }
 }

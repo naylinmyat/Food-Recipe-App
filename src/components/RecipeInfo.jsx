@@ -3,18 +3,22 @@ import { useParams } from 'react-router-dom'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { GridLoader } from 'react-spinners'
 
 let vId = "";
 const RecipeInfo = () => {
     let navigate = useNavigate();
     const [item, setItem] = useState();
     const { MealId } = useParams();
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealId}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data.meals[0]);
+                setShow(true)
             })
     }, [MealId])
 
@@ -26,6 +30,11 @@ const RecipeInfo = () => {
     return (
         <>
             {
+                !show ? 
+                <div className="loading">
+                    <GridLoader color="Black" size={25} />
+                </div>
+                :
                 (!item) ? "" : (
                     <>
                         <div className="content">

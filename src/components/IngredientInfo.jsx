@@ -5,25 +5,34 @@ import { IngredientsListContext } from '../App';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import MealItem from './MealItem'
+import { GridLoader } from 'react-spinners'
 
 const IngredientInfo = () => {
     const { IngredientName } = useParams();
     const ingredientList = useContext(IngredientsListContext);
     const [ingredientDescription,setIngredientDescription] = useState("");
     const [item, setItem] = useState();
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${IngredientName}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data.meals);
+                setIngredientDescription(ingredientList.filter((item => item.strIngredient.toLowerCase() === IngredientName.toLowerCase()))[0].strDescription)
+                setShow(true)
             })
-            setIngredientDescription(ingredientList.filter((item => item.strIngredient.toLowerCase() === IngredientName.toLowerCase()))[0].strDescription)
     },[IngredientName,ingredientList])
 
     return (
         <>
         {
+            !show ? 
+            <div className="loading">
+                <GridLoader color="Black" size={25} />
+            </div>
+            :
             (!item) ? "" : (
                 <div className='IngredientInfoPage'>
                     <div className='ingredientImgAndDesContainer'>

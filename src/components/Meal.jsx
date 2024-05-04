@@ -127,7 +127,7 @@ const Meal = () => {
                         <br />
                     </div> :
                     <div className="loading">
-                        <GridLoader color="#ffa500" size={25} />
+                        <GridLoader color="Black" size={25} />
                     </div>
             }
         </>

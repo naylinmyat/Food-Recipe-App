@@ -38,7 +38,7 @@ const AllIngredients = () => {
                             <input name='search' type="search" className="searchBar" placeholder='Search here...' value={search} onChange={e => setSearch(e.target.value)} onKeyDown={searchIngredient} />
                         </div>
                         {
-                            (tempIngredientList.length === 0) ? <p className='errorMessage'>Ingredient Not Found!</p> :
+                            (tempIngredientList.length === 0) ? <p className='ingredientSearchErrorMessage'>Ingredient Not Found!</p> :
                                 <div className="ingredientsContainer">
                                     <Ingredient ingredientList={tempIngredientList} isPopular={false} />
                                 </div>
@@ -46,7 +46,7 @@ const AllIngredients = () => {
                     </div>
                     : 
                     <div className="loading">
-                        <GridLoader color="#ffa500" size={25} />
+                        <GridLoader color="Black" size={25} />
                     </div>
             }
         </>

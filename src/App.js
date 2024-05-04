@@ -7,6 +7,8 @@ import AllIngredients from './components/AllIngredients';
 import { createContext } from 'react';
 import { useState,useEffect } from 'react';
 import IngredientInfo from './components/IngredientInfo';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 export const IngredientsListContext = createContext();
 
@@ -27,12 +29,14 @@ function App() {
   return (
     <>
     <IngredientsListContext.Provider value={ingredientList}>
+      <Navigation />
       <Routes>
         <Route path='/' element={<Meal />} />
         <Route path="/:MealId" element={<RecipeInfo />} />
         <Route path="/AllIngredients" element={<AllIngredients />} />
         <Route path="/AllIngredients/:IngredientName" element={<IngredientInfo />} />
       </Routes>
+      <Footer />
     </IngredientsListContext.Provider>
     </>
   );
