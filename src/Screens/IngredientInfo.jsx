@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { IngredientsListContext } from '../App';
 import { useContext } from 'react';
 import { useEffect } from 'react';
-import MealItem from './MealItem'
+import MealItem from '../components/MealItem'
 import { GridLoader } from 'react-spinners'
 
 const IngredientInfo = () => {

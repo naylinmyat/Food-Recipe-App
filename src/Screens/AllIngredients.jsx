@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useContext } from 'react';
 import { IngredientsListContext } from '../App';
-import Ingredient from './Ingredient';
+import Ingredient from '../components/Ingredient';
 import { GridLoader } from 'react-spinners'
 
 const AllIngredients = () => {

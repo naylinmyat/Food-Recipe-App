@@ -1,12 +1,12 @@
 import './App.css';
-import Meal from './components/Meal';
+import Meal from './Screens/Meal';
 import './components/style.css';
 import { Routes,Route } from 'react-router-dom';
-import RecipeInfo from './components/RecipeInfo';
-import AllIngredients from './components/AllIngredients';
+import RecipeInfo from './Screens/RecipeInfo';
+import AllIngredients from './Screens/AllIngredients';
 import { createContext } from 'react';
 import { useState,useEffect } from 'react';
-import IngredientInfo from './components/IngredientInfo';
+import IngredientInfo from './Screens/IngredientInfo';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
